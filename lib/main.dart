@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Pages/feed.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -37,16 +39,33 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  List<String> _pageTitle = [
+    'Traveling to?',
+    'Search',
+    'Trips',
+  ];
+  List<Widget> _pageHandler = [
+    Feed(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: ListView.builder(
+        padding: EdgeInsets.zero,
+        itemCount: 1,
+        itemBuilder: (BuildContext context, int index){
+          return Padding(
+            padding: EdgeInsets.only(bottom: 50),
+            child: _pageHandler.elementAt(_selectedIndex)
+          );
+        },
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home, size: 20,),
-            title: Text('Home'),
+            title: Text('Feed'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.chat_bubble, size: 20,),
@@ -66,9 +85,6 @@ class _MyHomePageState extends State<MyHomePage> {
         currentIndex: _selectedIndex,
         type: BottomNavigationBarType.fixed,
         unselectedItemColor: Colors.grey[500],
-        unselectedLabelStyle: TextStyle(
-          color: Colors.grey,
-        ),
         selectedItemColor: Colors.black,
         onTap: _onItemTapped,
       ),
