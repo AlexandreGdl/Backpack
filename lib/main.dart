@@ -39,13 +39,8 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  List<String> _pageTitle = [
-    'Traveling to?',
-    'Search',
-    'Trips',
-  ];
   List<Widget> _pageHandler = [
-    Feed(),
+    new Feed(),
   ];
 
   @override
