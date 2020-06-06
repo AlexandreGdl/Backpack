@@ -1,3 +1,5 @@
+import 'package:backpack/Pages/messagePage.dart';
+import 'package:backpack/Pages/trips.dart';
 import 'package:flutter/material.dart';
 
 import 'Pages/feed.dart';
@@ -41,6 +43,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<Widget> _pageHandler = [
     new Feed(),
+    new MessagingPage(),
+    new Trips(),
   ];
 
   @override

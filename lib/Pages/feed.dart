@@ -46,7 +46,7 @@ class _FeedState extends State<Feed> {
                     color: Colors.black,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.bold,
-                    fontSize: 20
+                    fontSize: 30
                   ),
                 ),
                 actions: <Widget>[
